@@ -1,0 +1,17 @@
+.input-primary {
+  transition: all 0.2s;
+  border: double 2px transparent;
+  border-radius: 6px;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, #898ca1, #898ca1);
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: black;
+}
+.input-primary:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, #f95ebb, #6775ff);
+}
