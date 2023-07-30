@@ -6,14 +6,18 @@ const themeAtom = atom({
   default: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'system'
 })
 
-function useTheme() {
+function useTheme({ init = false }: { init?: boolean }) {
+  // global reactive state theme
   const [theme, setTheme] = useRecoilState(themeAtom)
 
+  // reactive theme in localstorage
   const [localTheme, setLocalTheme] = useLocalStorage('theme', 'system')
 
+  // reactive os theme
   const isOSDark = usePreferredDark()
 
-  function onWindowMatches() {
+  // check os theme change -> add/remove dark class
+  const onWindowMatches = useCallback(() => {
     // If theme is 'dark' or (theme is 'system' and isOSDark) -> add dark
     if (localStorage.theme === 'dark' || (localStorage.theme === 'system' && isOSDark)) {
       // Chạy đi đâu
@@ -23,51 +27,65 @@ function useTheme() {
       // console.log('Từ Dark sang System')
       document.documentElement.classList.remove('dark')
     }
-  }
+  }, [isOSDark])
 
-  function selectDark() {
-    setTheme('dark')
-    setLocalTheme('dark')
-    document.documentElement.classList.add('dark')
-  }
-  function selectLight() {
-    setTheme('light')
-    setLocalTheme('light')
-    // Remove "dark" in html class
-    document.documentElement.classList.remove('dark')
-  }
-  function selectSystem() {
-    setTheme('system')
-    // remove "theme" in localstorage
-    setLocalTheme('system')
-    // set theme with window matches
-    onWindowMatches()
-  }
+  // select dark theme
+  const selectDark = useCallback(() => {
+    {
+      setTheme('dark')
+      setLocalTheme('dark')
+      document.documentElement.classList.add('dark')
+    }
+  }, [setTheme, setLocalTheme])
 
-  // Listen OS change dark query
+  // select light theme
+  const selectLight = useCallback(() => {
+    {
+      setTheme('light')
+      setLocalTheme('light')
+      // Remove "dark" in html class
+      document.documentElement.classList.remove('dark')
+    }
+  }, [setTheme, setLocalTheme])
+
+  // select os theme
+  const selectSystem = useCallback(() => {
+    {
+      setTheme('system')
+      // remove "theme" in localstorage
+      setLocalTheme('system')
+      // set theme with window matches
+      onWindowMatches()
+    }
+  }, [setTheme, setLocalTheme, onWindowMatches])
+
+  // Listen OS change
+  // Every OS theme change -> call function
   useEffect(() => {
     onWindowMatches()
-  }, [isOSDark])
+  }, [onWindowMatches])
 
   // Mounted -> using theme in localstorage
   // Mounted -> init Window Matches
   useEffect(() => {
-    switch (theme) {
-      case 'light':
-        selectLight()
-        break
-      case 'dark':
-        selectDark()
-        break
-      case 'system':
-        selectSystem()
-        break
-      default:
-        selectSystem()
-        break
-    }
+    if (init) {
+      switch (theme) {
+        case 'light':
+          selectLight()
+          break
+        case 'dark':
+          selectDark()
+          break
+        case 'system':
+          selectSystem()
+          break
+        default:
+          selectSystem()
+          break
+      }
 
-    onWindowMatches()
+      onWindowMatches()
+    }
   }, [])
 
   return {

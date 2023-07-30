@@ -1,8 +1,9 @@
 import { RouterProvider } from 'react-router-dom'
 import { appRouter } from '@/routers/index'
+import useTheme from './hooks/useTheme'
 
 function App() {
-  const {} = useTheme()
+  useTheme({ init: true })
   return <RouterProvider router={appRouter}></RouterProvider>
 }
 

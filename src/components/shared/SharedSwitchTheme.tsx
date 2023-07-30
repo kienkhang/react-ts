@@ -1,7 +1,7 @@
-import useThemeStore from '@/hooks/useTheme'
+import useTheme from '@/hooks/useTheme'
 
 const SharedSwitchTheme = () => {
-  const { localTheme: theme, selectDark, selectLight, selectSystem } = useThemeStore()
+  const { localTheme: theme, selectDark, selectLight, selectSystem } = useTheme({})
 
   return (
     <div className="flex items-center gap-3">
