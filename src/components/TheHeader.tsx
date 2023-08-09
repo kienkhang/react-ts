@@ -5,7 +5,7 @@ const TheHeader = () => {
   const { isOpen: visible, onOpen: open, onClose: close } = useDisclosure()
 
   return (
-    <div className="px-4 py-4 shadow-md xl:px-20">
+    <div className="p-4 shadow-md xl:px-20">
       <div className="flex items-center justify-between">
         <ILocalLogo className="w-6 h-6"></ILocalLogo>
         <div className="drawer">
