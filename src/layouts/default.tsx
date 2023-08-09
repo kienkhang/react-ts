@@ -4,7 +4,9 @@ const DefaultLayout = () => {
   return (
     <div>
       <TheHeader></TheHeader>
-      <Outlet></Outlet>
+      <div className="px-4 py-16">
+        <Outlet></Outlet>
+      </div>
     </div>
   )
 }
