@@ -1,6 +1,5 @@
-import React from 'react'
-
 const Login = () => {
+  console.log('Hello')
   return <div></div>
 }
 
