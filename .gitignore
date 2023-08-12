@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Auto import
-.src/auto-imports.d.ts
+src/auto-imports.d.ts
