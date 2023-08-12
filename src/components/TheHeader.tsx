@@ -2,7 +2,7 @@ import { useDisclosure } from '@chakra-ui/react'
 import SharedDrawer from './shared/SharedDrawer'
 import useTheme from '@/hooks/useTheme'
 const TheHeader = () => {
-  const { localTheme: theme, selectDark, selectLight, selectSystem } = useTheme({})
+  const { localTheme: theme, selectDark, selectLight } = useTheme({})
   const { isOpen: visible, onOpen: open, onClose: close } = useDisclosure()
 
   return (
