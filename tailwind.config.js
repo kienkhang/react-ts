@@ -25,6 +25,7 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        skillsbg: 'background: var(--gray-default, #FFF)',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
@@ -86,4 +87,3 @@ module.exports = {
   },
   plugins: [require('tailwindcss-animate')]
 }
-
