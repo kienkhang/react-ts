@@ -7,6 +7,7 @@ import {
   DrawerCloseButton
 } from '@chakra-ui/react'
 import SharedSwitchTheme from './SharedSwitchTheme'
+import SwitchLocales from './SwitchLocales'
 
 interface IProps {
   visible: boolean
@@ -14,6 +15,20 @@ interface IProps {
 }
 
 const SharedDrawer = ({ close, visible }: IProps) => {
+  // Global language
+  const { language } = useLanguage()
+
+  const isVn = useMemo(() => {
+    return language === 'vi'
+  }, [language])
+
+  const isEn = useMemo(() => {
+    return language === 'en'
+  }, [language])
+
+  // Translation
+  const { t } = useTranslation()
+
   return (
     <Drawer isOpen={visible} placement="right" onClose={close} size={'xs'}>
       <DrawerOverlay className="bg-black/30" />
@@ -40,6 +55,14 @@ const SharedDrawer = ({ close, visible }: IProps) => {
           <div className="flex items-center justify-between mt-4">
             <span className="font-semibold text-gray-600 dark:text-white">Switch Theme</span>
             <SharedSwitchTheme></SharedSwitchTheme>
+          </div>
+          {/* Switch locale */}
+          <div className="flex items-center justify-between mt-4">
+            <span className="font-semibold text-gray-600 dark:text-white">
+              {isVn && t('language.vi')}
+              {isEn && t('language.en')}
+            </span>
+            <SwitchLocales></SwitchLocales>
           </div>
         </DrawerBody>
 

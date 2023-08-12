@@ -30,9 +30,9 @@ const SwitchLocales = () => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <div className="w-5 h-5 transition-all cursor-pointer" onClick={() => setShow(true)}>
-          {isVn && <ILocalVnFlags className="w-5 h-5 shrink-0"></ILocalVnFlags>}
-          {isEn && <ILocalUkFlags className="w-5 h-5 shrink-0"></ILocalUkFlags>}
+        <div className="p-1.5 transition-all cursor-pointer" onClick={() => setShow(true)}>
+          {isVn && <ILocalVnFlags className="w-6 h-6 rounded-full shrink-0"></ILocalVnFlags>}
+          {isEn && <ILocalUkFlags className="w-6 h-6 rounded-full shrink-0"></ILocalUkFlags>}
         </div>
       </PopoverTrigger>
       {show && (
@@ -43,7 +43,7 @@ const SwitchLocales = () => {
             onClick={selectVn}
           >
             <div className="flex items-center gap-2">
-              <ILocalVnFlags className="w-5 h-5 shrink-0"></ILocalVnFlags>
+              <ILocalVnFlags className="w-5 h-5 rounded-full shrink-0"></ILocalVnFlags>
               <span className="text-base font-medium">{t('language.vi')}</span>
             </div>
           </div>
@@ -53,7 +53,7 @@ const SwitchLocales = () => {
             onClick={selectEn}
           >
             <div className="flex items-center gap-2">
-              <ILocalUkFlags className="w-5 h-5 shrink-0"></ILocalUkFlags>
+              <ILocalUkFlags className="w-5 h-5 rounded-full shrink-0"></ILocalUkFlags>
               <span className="text-base font-medium">{t('language.en')}</span>
             </div>
           </div>
