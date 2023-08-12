@@ -21,6 +21,8 @@ const queryClient = new QueryClient({
     }
   }
 })
+// Import i18n
+import './i18n.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
