@@ -3,80 +3,80 @@ const SkillsDetails = () => {
     <div>
       <div className="grid grid-cols-3 xl:grid-cols-8 gap-x-2 xl:gap-x-8 gap-y-4 xl:gap-y-12">
         <div className="flex flex-col items-center">
-          <ILocalJavascript className="w-12 h-12 self-center"></ILocalJavascript>
+          <ILocalJavascript className="self-center w-12 h-12"></ILocalJavascript>
           <span className="text-base xl:text-lg">Javascript</span>
         </div>
         <div className="flex flex-col items-center">
-          <ILocalTypescript className="w-12 h-12 self-center"></ILocalTypescript>
+          <ILocalTypescript className="self-center w-12 h-12"></ILocalTypescript>
           <span className="text-base xl:text-lg">Typescript</span>
         </div>
         <div className="flex flex-col items-center">
-          <ILocalReact className="w-12 h-12 self-center"></ILocalReact>
+          <ILocalReact className="self-center w-12 h-12"></ILocalReact>
           <span className="text-base xl:text-lg">React.js</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalNextjs className="w-12 h-12 self-center"></ILocalNextjs>
+          <ILocalNextjs className="self-center w-12 h-12"></ILocalNextjs>
           <span className="text-base xl:text-lg">NextJS.js</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalNodejs className="w-12 h-12 self-center"></ILocalNodejs>
+          <ILocalNodejs className="self-center w-12 h-12"></ILocalNodejs>
           <span className="text-base xl:text-lg">Node.js</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalExpress className="w-12 h-12 self-center"></ILocalExpress>
-          <span className="text-base xl:text-lg">Express.js</span>
+          <ILocalExpress className="self-center w-12 h-12"></ILocalExpress>
+          <span className="text-base xl:text-lg dark:text-white">Express.js</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalNestjs className="w-12 h-12 self-center"></ILocalNestjs>
+          <ILocalNestjs className="self-center w-12 h-12"></ILocalNestjs>
           <span className="text-base xl:text-lg">NestJS.js</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalSocket className="w-12 h-12 self-center"></ILocalSocket>
-          <span className="text-base xl:text-lg">Socket.io</span>
+          <ILocalSocket className="self-center w-12 h-12"></ILocalSocket>
+          <span className="text-base xl:text-lg text-[#010101] dark:text-white">Socket.io</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalPostgresql className="w-12 h-12 self-center"></ILocalPostgresql>
+          <ILocalPostgresql className="self-center w-12 h-12"></ILocalPostgresql>
           <span className="text-base xl:text-lg">PostgreSQL</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalMongodb className="w-12 h-12 self-center"></ILocalMongodb>
-          <span className="text-base xl:text-lg">MongoDB</span>I
+          <ILocalMongodb className="self-center w-12 h-12"></ILocalMongodb>
+          <span className="text-base xl:text-lg">MongoDB</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalSass className="w-12 h-12 self-center"></ILocalSass>
+          <ILocalSass className="self-center w-12 h-12"></ILocalSass>
           <span className="text-base xl:text-lg">Sass/Scss</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalTailwindcss className="w-12 h-12 self-center"></ILocalTailwindcss>
+          <ILocalTailwindcss className="self-center w-12 h-12"></ILocalTailwindcss>
           <span className="text-base xl:text-lg">TailwindCSS</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalFigma className="w-12 h-12 self-center"></ILocalFigma>
+          <ILocalFigma className="self-center w-12 h-12"></ILocalFigma>
           <span className="text-base xl:text-lg">Figma</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalCypress className="w-12 h-12 self-center"></ILocalCypress>
-          <span className="text-base xl:text-lg">Cypress</span>
+          <ILocalCypress className="self-center w-12 h-12"></ILocalCypress>
+          <span className="text-base text-black xl:text-lg dark:text-white">Cypress</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalStorybook className="w-12 h-12 self-center"></ILocalStorybook>
+          <ILocalStorybook className="self-center w-12 h-12"></ILocalStorybook>
           <span className="text-base xl:text-lg">Storybook</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <ILocalGithub className="w-12 h-12 self-center"></ILocalGithub>
+          <ILocalGithub className="self-center w-12 h-12"></ILocalGithub>
           <span className="text-base xl:text-lg">Github</span>
         </div>
       </div>
