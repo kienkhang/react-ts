@@ -1,3 +1,4 @@
+import AboutMeSection from '@/components/aboutme/AboutMeSection'
 import ExperienceSection from '@/components/experience/ExperienceSection'
 import Footer from '@/components/footer/Footer'
 import ProfileInfo from '@/components/profile/ProfileInfo'
@@ -7,9 +8,12 @@ import SkillsSection from '@/components/skills/SkillsSection'
 const IndexPage = () => {
   return (
     <div>
-      <div className="flex flex-col gap-12 xl:flex-row-reverse xl:justify-center xl:px-8 px-4 py-16">
+      <div className="flex flex-col gap-12 px-4 py-16 xl:flex-row-reverse xl:justify-center xl:px-8">
         <ProfilePhoto></ProfilePhoto>
         <ProfileInfo></ProfileInfo>
+      </div>
+      <div>
+        <AboutMeSection></AboutMeSection>
       </div>
       <div>
         <SkillsSection></SkillsSection>
