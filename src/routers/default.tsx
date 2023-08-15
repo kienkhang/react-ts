@@ -1,5 +1,6 @@
 import DefaultLayout from '@/layouts/default'
 import IndexPage from '@/pages'
+import UploadPage from '@/pages/upload'
 import type { RouteObject } from 'react-router-dom'
 
 const defaultRoute: RouteObject = {
@@ -9,6 +10,10 @@ const defaultRoute: RouteObject = {
     {
       index: true,
       element: <IndexPage />
+    },
+    {
+      path: 'upload',
+      element: <UploadPage />
     }
   ]
 }
