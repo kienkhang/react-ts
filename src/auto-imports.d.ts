@@ -51,6 +51,7 @@ declare global {
   const useDebugValue: typeof import('react')['useDebugValue']
   const useDeferredValue: typeof import('react')['useDeferredValue']
   const useEffect: typeof import('react')['useEffect']
+  const useFileUpload: typeof import('./hooks/useFileUpload')['default']
   const useHref: typeof import('react-router-dom')['useHref']
   const useId: typeof import('react')['useId']
   const useImperativeHandle: typeof import('react')['useImperativeHandle']
