@@ -42,7 +42,7 @@ const UploadSection = () => {
     <div>
       <div
         className={`relative border-2 border-dashed border-gray-800 rounded-2xl min-h-[300px] min-w-[320px] cursor-pointer transition-all ${
-          isDragArea ? 'border-green-600' : 'border-black'
+          isDragArea ? 'border-green-600' : 'border-black dark:border-gray-400'
         }`}
         onDragEnter={doDragEnter}
         onDragLeave={doDragLeave}
