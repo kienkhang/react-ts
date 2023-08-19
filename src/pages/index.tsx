@@ -4,6 +4,7 @@ import Footer from '@/components/footer/Footer'
 import ProfileInfo from '@/components/profile/ProfileInfo'
 import ProfilePhoto from '@/components/profile/ProfilePhoto'
 import SkillsSection from '@/components/skills/SkillsSection'
+import WorkSection from '@/components/work/WorkSection'
 
 const IndexPage = () => {
   return (
@@ -13,13 +14,16 @@ const IndexPage = () => {
         <ProfileInfo></ProfileInfo>
       </div>
       <div>
-        <AboutMeSection></AboutMeSection>
+        <AboutMeSection />
       </div>
       <div>
         <SkillsSection></SkillsSection>
       </div>
       <div className="px-4 py-16 bg-[#F9FAFB] dark:bg-[#111827] xl:px-20 xl:py-24">
         <ExperienceSection />
+      </div>
+      <div>
+        <WorkSection />
       </div>
       <div className=" py-6 xl:py-6 xl:px-20 bg-[#F9FAFB] dark:bg-[#111827]">
         <Footer />

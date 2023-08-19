@@ -10,6 +10,7 @@ declare global {
   const ILocalFigma: typeof import('~icons/local/figma.jsx')['default']
   const ILocalGithub: typeof import('~icons/local/github.jsx')['default']
   const ILocalGoogle: typeof import('~icons/local/google.jsx')['default']
+  const ILocalIconWork: typeof import('~icons/local/icon-work.jsx')['default']
   const ILocalIconfooter: typeof import('~icons/local/iconfooter.jsx')['default']
   const ILocalJavascript: typeof import('~icons/local/javascript.jsx')['default']
   const ILocalLocation: typeof import('~icons/local/location.jsx')['default']
