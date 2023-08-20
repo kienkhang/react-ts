@@ -1,19 +1,22 @@
 import ExperienceContent from './ExperienceContent'
 const datas = [
   {
-    date: 'Nov 2021 - Present',
+    startTime: '2021-11-02 ',
+    endTime: 'Present',
     title: 'Sr.Frontend DeveLoper',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut pretium arcu et massa semper, id fringilla leo semper.Sed quis justo ac magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   },
   {
-    date: 'Jul 2017 - Oct 2021',
+    startTime: '2017-07-02',
+    endTime: '2021-10-10',
     title: 'Team Lead',
     content:
       'Sed quis justo ac magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed quis justo ac magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   },
   {
-    date: 'Dec 2015 - May 2017',
+    startTime: '2015-12-12',
+    endTime: '2017-05-06',
     title: 'Full Stack Developer',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
@@ -23,7 +26,13 @@ const ExperienceBody = () => {
   return (
     <div className=" flex flex-col gap-6 xl:gap-12 items-center">
       {datas.map((data, index) => (
-        <ExperienceContent key={index} date={data.date} title={data.title} content={data.content} />
+        <ExperienceContent
+          key={index}
+          startTime={data.startTime}
+          title={data.title}
+          content={data.content}
+          endTime={data.endTime}
+        />
       ))}
     </div>
   )
