@@ -25,6 +25,7 @@
     "axios": "^1.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "dayjs": "^1.11.9",
     "framer-motion": "^10.15.1",
     "i18next": "^23.2.11",
     "i18next-browser-languagedetector": "^7.1.0",
