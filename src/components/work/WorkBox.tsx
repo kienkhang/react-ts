@@ -25,7 +25,7 @@ const WorkBox = ({ index, title, content, tags }: ContentProps) => {
               ))}
             </div>
             <div>
-              <ILocalIconWork></ILocalIconWork>
+              <ILocalWork></ILocalWork>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const WorkBox = ({ index, title, content, tags }: ContentProps) => {
               ))}
             </div>
             <div>
-              <ILocalIconWork></ILocalIconWork>
+              <ILocalWork></ILocalWork>
             </div>
           </div>
         </div>

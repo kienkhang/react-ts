@@ -33,6 +33,7 @@ declare global {
   const ILocalUkFlags: typeof import('~icons/local/uk-flags.jsx')['default']
   const ILocalUpwork: typeof import('~icons/local/upwork.jsx')['default']
   const ILocalVnFlags: typeof import('~icons/local/vn-flags.jsx')['default']
+  const ILocalWork: typeof import('~icons/local/work.jsx')['default']
   const IMdiLogin: typeof import('~icons/mdi/login.jsx')['default']
   const IMdiMenu: typeof import('~icons/mdi/menu.jsx')['default']
   const IMdiMonitor: typeof import('~icons/mdi/monitor.jsx')['default']
