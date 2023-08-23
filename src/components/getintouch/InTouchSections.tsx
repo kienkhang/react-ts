@@ -1,17 +1,9 @@
-import { useClipboard } from '@reactuses/core'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import CopyAble from './CopyAble'
+import PhoneIcon from './PhoneIcon'
 
 const InTouchSections = () => {
-  const [copy, setCopy] = useClipboard()
   const emailAddress = 'reachsagarshah@gmail.com'
   const phoneNumber = '+91 8980500565'
-
-  const handleTooltipOpen = () => {
-    // setOpen(true)
-    setTimeout(() => {
-      // setOpen(false)
-    }, 1000)
-  }
 
   return (
     <div className="px-4 xl:px-20 py-16 xl:py-[96px] items-stretch">
@@ -30,44 +22,15 @@ const InTouchSections = () => {
             <h2 className="font-semibold text-[#111827] dark:text-[#F9FAFB] text-lg">
               {emailAddress}
             </h2>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <ILocalCopy
-                    className="w-6 h-6 cursor-pointer dark:text-[#D1D5DB]"
-                    onClick={() => setCopy(emailAddress)}
-                  ></ILocalCopy>
-                  {/* Nội dung tooltip */}
-                  {copy && (
-                    <TooltipContent className="bg-[#4B5563] dark:bg-[#D1D5DB] text-[#F9FAFB] dark:text-[#111827]">
-                      <p>Copied!</p>
-                    </TooltipContent>
-                  )}
-                </TooltipTrigger>
-              </Tooltip>
-            </TooltipProvider>
+            <CopyAble data={emailAddress}></CopyAble>
           </div>
           <div className="flex justify-center items-center gap-4">
-            <ILocalPhone className="w-6 h-6 dark:text-[#D1D5DB]"></ILocalPhone>
+            {/* <ILocalPhone className="w-6 h-6 dark:text-[#D1D5DB]"></ILocalPhone> */}
+            <PhoneIcon></PhoneIcon>
             <h2 id="phone" className="font-semibold text-[#111827] dark:text-[#F9FAFB] text-lg">
               {phoneNumber}
             </h2>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <ILocalCopy
-                    className="w-6 h-6 cursor-pointer dark:text-[#D1D5DB]"
-                    onClick={() => setCopy(phoneNumber)}
-                  ></ILocalCopy>
-                  {/* Nội dung tooltip */}
-                  {copy && (
-                    <TooltipContent className="bg-[#4B5563] dark:bg-[#D1D5DB] text-[#F9FAFB] dark:text-[#111827]">
-                      <p>Copied!</p>
-                    </TooltipContent>
-                  )}
-                </TooltipTrigger>
-              </Tooltip>
-            </TooltipProvider>
+            <CopyAble data={phoneNumber}></CopyAble>
           </div>
         </div>
         <div className="w-full text-center text-[#4B5563] dark:text-[#D1D5DB] self-center text-base mb-2">
