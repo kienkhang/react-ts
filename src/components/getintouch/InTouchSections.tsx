@@ -1,10 +1,50 @@
-import CopyAble from './CopyAble'
-import PhoneIcon from './PhoneIcon'
+import { useClipboard } from '@reactuses/core'
+import CopyAble from '../shared/CopyAble'
+// interface CopyIconProps {
+//   // Define your props here
+//   handleTooltip: () => void
+//   data: string
+// }
+// const CopyIcon: React.FC<CopyIconProps> = (props) => {
+//   const [copy, setCopy] = useClipboard()
+//   const [tooltip, setTooltip] = useState(false)
+//   const handleTooltip = () => {
+//     setTooltip(true)
+//     void setCopy(props.data)
+//     setTimeout(() => {
+//       setTooltip(false)
+//     }, 1000)
+//   }
+//   return (
+//     <ILocalCopy
+//       className="w-6 h-6 cursor-pointer text-[#4B5563] dark:text-[#D1D5DB] hover:bg-[#b9b9bd] rounded-md "
+//       onClick={() => handleTooltip()}
+//     ></ILocalCopy>
+//   )
+// }
 
 const InTouchSections = () => {
   const emailAddress = 'reachsagarshah@gmail.com'
   const phoneNumber = '+91 8980500565'
+  const [tooltipEmail, setTooltipEmail] = useState(false)
+  const [tooltipPhone, setTooltipPhone] = useState(false)
+  const [copy, setCopy] = useClipboard()
 
+  const handleCopyEmail = (props: { data: string }) => {
+    void setCopy(props.data)
+    setTooltipEmail(true)
+    setTimeout(() => {
+      setTooltipEmail(false)
+    }, 1000)
+  }
+
+  const handleCopyPhone = (props: { data: string }) => {
+    void setCopy(props.data)
+    setTooltipPhone(true)
+    setTimeout(() => {
+      setTooltipPhone(false)
+    }, 1000)
+  }
   return (
     <div className="px-4 xl:px-20 py-16 xl:py-[96px] items-stretch">
       <div className="flex flex-col items-center xl:px-8">
@@ -18,19 +58,28 @@ const InTouchSections = () => {
 
         <div className="w-full text-center text-[#4B5563] self-center text-xl mb-6">
           <div className="flex justify-center items-center gap-4">
-            <ILocalMail className="w-6 h-6 dark:text-[##D1D5DB]"></ILocalMail>
+            <ILocalMail className="w-6 h-6 dark:text-[#D1D5DB]"></ILocalMail>
             <h2 className="font-semibold text-[#111827] dark:text-[#F9FAFB] text-lg">
               {emailAddress}
             </h2>
-            <CopyAble data={emailAddress}></CopyAble>
+            <CopyAble tooltip={tooltipEmail} copy={copy}>
+              <ILocalCopy
+                className="w-6 h-6 cursor-pointer text-[#4B5563] dark:text-[#D1D5DB] hover:bg-[#b9b9bd] rounded-md"
+                onClick={() => handleCopyEmail({ data: emailAddress })}
+              ></ILocalCopy>
+            </CopyAble>
           </div>
           <div className="flex justify-center items-center gap-4">
-            {/* <ILocalPhone className="w-6 h-6 dark:text-[#D1D5DB]"></ILocalPhone> */}
-            <PhoneIcon></PhoneIcon>
+            <ILocalPhone className="w-6 h-6 dark:text-[#D1D5DB]"></ILocalPhone>
             <h2 id="phone" className="font-semibold text-[#111827] dark:text-[#F9FAFB] text-lg">
               {phoneNumber}
             </h2>
-            <CopyAble data={phoneNumber}></CopyAble>
+            <CopyAble tooltip={tooltipPhone} copy={copy}>
+              <ILocalCopy
+                className="w-6 h-6 cursor-pointer text-[#4B5563] dark:text-[#D1D5DB] hover:bg-[#b9b9bd] rounded-md"
+                onClick={() => handleCopyPhone({ data: phoneNumber })}
+              ></ILocalCopy>
+            </CopyAble>
           </div>
         </div>
         <div className="w-full text-center text-[#4B5563] dark:text-[#D1D5DB] self-center text-base mb-2">
