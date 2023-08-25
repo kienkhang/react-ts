@@ -1,6 +1,4 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip'
-import { useClipboard } from '@reactuses/core'
-
 interface CopyAbleProps {
   // Define your props here
   children: React.ReactNode
