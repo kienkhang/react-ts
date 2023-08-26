@@ -1,6 +1,7 @@
 import AboutMeSection from '@/components/aboutme/AboutMeSection'
 import ExperienceSection from '@/components/experience/ExperienceSection'
 import Footer from '@/components/footer/Footer'
+import InTouchSections from '@/components/getintouch/InTouchSections'
 import ProfileInfo from '@/components/profile/ProfileInfo'
 import ProfilePhoto from '@/components/profile/ProfilePhoto'
 import SkillsSection from '@/components/skills/SkillsSection'
@@ -23,6 +24,7 @@ const IndexPage = () => {
         <ExperienceSection />
       </div>
       <div>
+        <InTouchSections />
         <WorkSection />
       </div>
       <div className=" py-6 xl:py-6 xl:px-20 bg-[#F9FAFB] dark:bg-[#111827]">
