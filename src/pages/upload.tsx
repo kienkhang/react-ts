@@ -11,7 +11,9 @@ const UploadPage = () => {
   }
 
   function onChange(e: ChangeEvent<HTMLInputElement>) {
-    const files = (e.target as HTMLInputElement).files
+    const fileList = (e.target as HTMLInputElement).files
+    let files = null
+    if (fileList) files = [...fileList]
     console.log('😃😦😧 ~ onChange ~ files:', files)
   }
 

@@ -1,11 +1,44 @@
-import animationData from '@/assets/lotties/upload-lotties.json'
+import animationData from '@/assets/lotties/khunglong.json'
 import Lottie from 'react-lottie'
+
+import axios from 'axios'
 
 const UploadSection = () => {
   const [isDragArea, setDragArea] = useState(false)
 
+  const [fileArray, setFileArray] = useState<File[]>([])
+
   function doChange(file: File[]) {
-    console.log('😃😦😧 ~ doChange ~ file:', file)
+    // console.log('😃😦😧 ~ doChange ~ file:', file)
+    // Xử lý
+    setFileArray(file)
+    console.log('FILE', fileArray)
+    console.log('FILE[0]', fileArray[0])
+  }
+
+  async function uploadImageKit() {
+    // Get Signature
+    const res = await axios.get('http://localhost:4628/api/files/request-signature')
+    console.log('😃😦😧 ~ uploadImageKit ~ res:', res.data)
+    const { expire, signature, token } = res.data.data
+
+    const uploadRes = await axios.post(
+      'https://upload.imagekit.io/api/v1/files/upload',
+      {
+        file: fileArray[0],
+        publicKey: 'public_7xtsbHPscCv/UMjW3mcLWkzKPnk=',
+        signature,
+        expire,
+        token,
+        fileName: 'im faker'
+      },
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+    )
+    console.log('😃😦😧 ~ uploadImageKit ~ uploadRes:', uploadRes)
   }
 
   const { open } = useFileUpload({
@@ -34,6 +67,7 @@ const UploadSection = () => {
     const draggedData = e.dataTransfer
     // Get files: FileList from data transfer
     const files = draggedData.files
+
     doChange([...files])
     setDragArea(false)
   }
@@ -71,6 +105,9 @@ const UploadSection = () => {
           />
         </div>
       </div>
+      <button className="p-3 border rounded-lg upload" onClick={() => uploadImageKit()}>
+        Call upload
+      </button>
     </div>
   )
 }
